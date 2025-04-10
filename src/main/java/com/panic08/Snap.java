@@ -126,4 +126,9 @@ public final class Snap<T> {
         action.run();
         storage.save(name, new Snapshot<>(target, strategy));
     }
+
+    public SnapshotScheduler<T> schedule() {
+        return new SnapshotScheduler<>(this);
+    }
+
 }
